@@ -91,7 +91,9 @@ ret=$?
 echo "MySQL Import Return: $ret"
 
 #cleanup output if everything worked
-[ $ret -eq 0 ] && rm $d/joblist $d/jobFinishLog $d/jobFinishLog_execHosts $d/jobFinishLog_askedHosts $d/jobFinishLog_hRusages $d/alist $d/rsvFinishLog $d/rsvFinishLog_alloc
+[ $ret -eq 0 ] && rm $joblist $jobFinishLog $jobFinishLog_exec \
+    $jobFinishLog_asked $jobFinishLog_usage \
+    $alist $rsvFinishLog $rsvFinishLog_alloc
 
 exit $ret
 
