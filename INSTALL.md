@@ -16,18 +16,11 @@ Suggested:
   * Server must be able to import CSV files. 
   * Example SQL schema provided. All fieldnames are based directly on LSF's API reference
 
-Example compile on AIX:
-```
-export OBJECT_MODE=64
-xlC128 -I$LSF_BINDIR/../../include -L$LSF_LIBDIR -llsf -lbat -o lsf_dump lsb_acct_dump.cc ofst.cc alist.cc jlist.cc lsf.cc lsf_dump.cc fdump.cc
-```
-
 Example compile on Linux:
 ```
 g++ -I$LSF_BINDIR/../../include -L$LSF_LIBDIR  -lnsl -llsf -lbat -o lsf_dump lsb_acct_dump.cc ofst.cc alist.cc jlist.cc lsf.cc lsf_dump.cc fdump.cc
 ```
-
 Example usage:
 ```
-bash scripts/mysql_import.sh "example" "$LSF_ENVDIR/../work/$cluster/logdir/lsb.acct.1" /usr/local/bin/lsf_dump
+scripts/mysql_import.sh  endeavour $LSF_ENVDIR/../work/$cluster/logdir/lsb.acct.1 /usr/local/bin/lsf_dump
 ```
