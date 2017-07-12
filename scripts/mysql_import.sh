@@ -29,7 +29,10 @@ rsvFinishLog=$dst/rsvFinishLog
 rsvFinishLog_alloc=$dst/rsvFinishLog_alloc
 
 echo "LSF dump: $fname lines: $(wc -l < $fname)"
-#$lsf_dump $fname $joblist $jobFinishLog $jobFinishLog_execHosts $jobFinishLog_askedHosts $jobFinishLog_hRusages $alist $rsvFinishLog $rsvFinishLog_alloc
+$lsf_dump $fname \
+    $joblist $jobFinishLog $jobFinishLog_exec \
+    $jobFinishLog_asked $jobFinishLog_usage \
+    $alist $rsvFinishLog $rsvFinishLog_alloc
 ret=$?
 curjobs=$(wc -l < $jobFinishLog)
 echo "LSF dump: $(basename $fname) return: $? jobs: $curjobs" 
