@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `endeavour_jobFinishLog` (
   `userId` int(32) unsigned NOT NULL COMMENT 'The user ID of the submitter. ',
   `userName` text NOT NULL COMMENT 'The user name of the submitter. ',
   `numProcessors` int(11) NOT NULL COMMENT 'The number of processors requested for execution. ',
-  `jStatus` enum('NULL','PEND','PSUSP','RUN','SSUSP','USUSP','EXIT','DONE','PDONE','PERR','WAIT','UNKWN') NOT NULL COMMENT 'The status of the job',
+  `jStatus` enum('NULL','PEND','PSUSP','RUN','SSUSP','USUSP','EXIT','DONE','PDONE','PERR','WAIT','UNKWN','DELETED') NOT NULL COMMENT 'The status of the job',
   `submitTime` int(32) NOT NULL COMMENT 'Job submission time. ',
   `beginTime` int(32) NOT NULL COMMENT 'The job started at or after this time. ',
   `termTime` int(32) NOT NULL COMMENT 'If the job was not finished by this time, it was killed. ',
