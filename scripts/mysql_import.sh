@@ -29,7 +29,7 @@ rsvFinishLog=$dst/rsvFinishLog
 rsvFinishLog_alloc=$dst/rsvFinishLog_alloc
 
 echo "LSF dump: $fname lines: $(wc -l < $fname)"
-$lsf_dump $fname \
+$lsfdump $fname \
     $joblist $jobFinishLog $jobFinishLog_exec \
     $jobFinishLog_asked $jobFinishLog_usage \
     $alist $rsvFinishLog $rsvFinishLog_alloc
