@@ -261,4 +261,19 @@ CREATE TABLE IF NOT EXISTS `endeavour_rsvFinishLog_alloc` (
   PRIMARY KEY (`rsvId`(8),`rsvReqTime`,`resName`(8)),
   KEY `rsvId` (`rsvId`(8),`rsvReqTime`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='LSF rsvFinishLog->alloc Struct';
+
+-- Additional tables for file system usage
  
+CREATE TABLE IF NOT EXISTS endeavour_filesysusedmost (
+	jobId       int(32) unsigned NOT NULL COMMENT 'The unique ID for the job. ',
+	filesysused text             NOT NULL COMMENT 'File system used most. ',
+	PRIMARY KEY (jobId)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='LSF filesystem type used most in a job';
+
+CREATE TABLE IF NOT EXISTS endeavour_filesysused (
+	jobId   int(32) unsigned NOT NULL COMMENT 'The unique ID for the job. ',
+	filesys text             NOT NULL COMMENT 'File system used',
+	kbread  int 	signed   NOT NULL COMMENT 'kbs read',
+	kbwrite int 	signed   NOT NULL COMMENT 'kbs write',
+	PRIMARY KEY (jobId)
+	) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='LSF all filesystems used in a job';
