@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS endeavour_filesysusedmost (
 CREATE TABLE IF NOT EXISTS endeavour_filesysused (
 	jobId   int(32) unsigned NOT NULL COMMENT 'The unique ID for the job. ',
 	filesys text             NOT NULL COMMENT 'File system used',
-	kbread  int 	signed   NOT NULL COMMENT 'kbs read',
-	kbwrite int 	signed   NOT NULL COMMENT 'kbs write',
+	kbread  int 	signed   NOT NULL COMMENT 'Mbs read',
+	kbwrite int 	signed   NOT NULL COMMENT 'Mbs write',
 	PRIMARY KEY (jobId)
 	) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='LSF all filesystems used in a job';
